@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: "{{{M3_NAMESPACE}}}"
+  name: ayoub
+  labels:
+    app: ayoub
+spec:
+  replicas: {{{M3_REPLICAS}}}
+  selector:
+    matchLabels:
+      app: ayoub
+  template:
+    metadata:
+      labels:
+        app: ayoub
+    spec:
+      containers:
+      - name: ayoub
+        image: "{{{M3_IMAGE}}}:{{{M3_VERSION}}}"
+        ports:
+        - containerPort: {{{M3_PORT}}}

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: "{{{M3_NAMESPACE}}}"
+  name: ayoub
+spec:
+  selector:
+    app: ayoub
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: "{{{M3_NAMESPACE}}}"
+  name: ayoub
+spec:
+  rules:
+  - host: "{{{DNS_VALUE}}}.ahmedayoub.me"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ayoub
+            port:
+              number: 80
